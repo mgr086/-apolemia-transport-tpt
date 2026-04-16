@@ -5,6 +5,7 @@ This repository contains code for a master's thesis on Lagrangian ocean transpor
 
 
 ## Repository structure
+```text
 project/
 └─ src/
    ├─ config.py
@@ -28,6 +29,7 @@ project/
       ├─ pygtm_dataset_miron.py
       ├─ pygtm_matrix_miron.py
       └─ pygtm_physical_miron.py
+```
 
 ## Data
 Surface transport is modeled using altimetry-derived geostrophic velocity fields from the Copernicus Marine Service for the period 1996–2024. 
