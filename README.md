@@ -44,7 +44,7 @@ Download link: https://data.marine.copernicus.eu/product/SEALEVEL_GLO_PHY_L4_MY_
 When downloading the data, select:
 - Daily fields
 - Surface geostrophic eastward water velocity (ugos, m/s)
-- Surface geostrophic northward water velocity (ugos [m/s])
+- Surface geostrophic northward water velocity (vgos, m/s)
 
 Spatial domain:
 - West: -18
@@ -52,14 +52,13 @@ Spatial domain:
 - South: 48
 - North: 74
 
-Temporal coverage used in this thesis:
-- 1996-12-01 to 2024-12-31
+Temporal coverage:
+For each file, download one overlapping one-year NETCDF file at a time and save it using the filename convention NAO<year>.nc.
+Each file should contain data from 1 December of the previous year to 31 December of the named year. Thus
+- NAO1997.nc must contain data from 1996-12-01 to 1997-12-31
+- NAO1998.nc must contain data from 1997-12-01 to 1998-12-31
 
-The TITM constructon requires overlapping one-year netCDF files. For example: 
-- "NAO1997.nc" contains data from 1996-12-01 to 1997-12-31 and is used to construct the 1997 transition matrices
-- "NAO1998.nc" contains data from 1997-12-01 to 1998-12-31 and is used to construct the 1998 transition matrices
-
-This overlap is required because the 14-day trajectory integration preceeding ISO week 2 may begin in the previous calender year. 
+This overlap is required because the 14-day trajectory integrations used to build the transition matrices for the first biweekly windows of a given analysis year may start in the previous calender year. The files required for the thesis therefore correspond to analysis years 1997-2024, with overlapping windows covering 1996-12-01 to 2024-12-31. 
 
 All downloaded ".nc" files should be placed in "src/data/". 
 
