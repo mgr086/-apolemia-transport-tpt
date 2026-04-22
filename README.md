@@ -20,15 +20,18 @@ project/
    ├─ Output/
    │  ├─ titm1000/
    │  └─ Run<timestamp>/
-   │     ├─ plots/
+   │     ├─ flux_fields/
    │     ├─ metrics/
-   │     └─ multi-step/
+   │     ├─ multi_step/
+   │     └─ plots/   
    └─ third_party/
       ├─ pytpt_finite_helfmann.py
       ├─ Tbarrier_hallergroup.py
-      ├─ pygtm_dataset_miron.py
-      ├─ pygtm_matrix_miron.py
-      └─ pygtm_physical_miron.py
+      ├─ pygtm_miron
+         ├─ dataset.py
+         ├─ matrix.py
+         ├─ physical.py
+         └─ tools.py
 ```
 
 ## Data
@@ -44,22 +47,21 @@ When downloading the data, select:
 - Surface geostrophic northward water velocity (ugos [m/s])
 
 Spatial domain:
-- West: -15
-- East: 20
-- South: 50
-- North: 70
+- West: -18
+- East: 23
+- South: 48
+- North: 74
 
 Temporal coverage used in this thesis:
-- 1996-01-01 to 2024-12-31
+- 1996-12-01 to 2024-12-31
 
-The TITM constructon requires overlapping two-year netCDF files. For example: 
-- "NAO_96_97.nc" contains data from 1996-01-01 to 1997-12-31 and is used to construct the 1997 transition matrices
-- "NAO_97_98.nc" contains data from 1997-01-01 to 1998-12-31 and is used to construct the 1998 transition matrices
+The TITM constructon requires overlapping one-year netCDF files. For example: 
+- "NAO1997.nc" contains data from 1996-12-01 to 1997-12-31 and is used to construct the 1997 transition matrices
+- "NAO1998.nc" contains data from 1997-12-01 to 1998-12-31 and is used to construct the 1998 transition matrices
 
 This overlap is required because the 14-day trajectory integration preceeding ISO week 2 may begin in the previous calender year. 
 
 All downloaded ".nc" files should be placed in "src/data/". 
-
 
 ## Workflow
 The code is intended to be run in the following order: 
@@ -115,7 +117,7 @@ All generated files are written to "src/Output".
 - "src/Output/titm<m>/titm_tests/" contains tests performed on the augmented transition matrices.
 - "src/Output/Run<timestamp>/plots/" contains figures from the diagnostic stages
 - "src/Output/Run<timestamp>/metrics/" containes saved per-target transport metrics
-- "src/Output/Run<timestamp>/multi-step/" contains saved full-window transport operators used in the transport diagnostics.
+- "src/Output/Run<timestamp>/multi_step/" contains saved full-window transport operators used in the transport diagnostics.
 
 ## Requirements
 The code was written for Python 3.12 and requires the following Python packages: 
