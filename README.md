@@ -1,7 +1,7 @@
 # Apolemia Transport TPT
 
 ## Overview
-This repository contains code for a master's thesis on Lagrangian ocean transport in the Norwegian Sea. The workflow constructs finite-time, time-inhomogeneous transition matrices (titm) and applies finite-time Transition Path Theory (TPT) to study transport diagnostics associated with Apolemia bloom years.
+This repository contains code for a master's thesis on Lagrangian ocean transport in the North Sea and the Norwegian Sea. The workflow constructs finite-time, time-inhomogeneous transition matrices (titm) and applies finite-time Transition Path Theory (TPT) to study transport diagnostics associated with Apolemia bloom years.
 
 
 ## Repository structure
@@ -127,6 +127,7 @@ The code was written for Python 3.12 and requires the following Python packages:
 - cartopy
 - netCDF4
 - scikit-learn
+- cmoceaon
 
 The repository also includes the required third-party research code in "src/third_party/", so these files do not need to be installed separately as packages. 
 
