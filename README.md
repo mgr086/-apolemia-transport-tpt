@@ -127,7 +127,7 @@ The code was written for Python 3.12 and requires the following Python packages:
 - cartopy
 - netCDF4
 - scikit-learn
-- cmoceaon
+- cmocean
 
 The repository also includes the required third-party research code in "src/third_party/", so these files do not need to be installed separately as packages. 
 
